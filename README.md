@@ -1,54 +1,97 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📦 QReturn QR Generator
 
-Currently, two official plugins are available:
+Generate secure QR codes with custom links and download them as **images or branded PDFs** using your own custom template.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Template Preview](./public/qreturn-bg.jpg)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- ✅ Generate QR codes from any URL
+- 🖼️ Download QR as a high-quality PNG image
+- 📄 Export a branded PDF with your QR code placed in a template
+- ⚡ Fast and responsive — built with **Vite + React + Tailwind CSS**
+- 🧩 Powered by `jsPDF` and `qrcode.react`
+
+---
+
+## 🛠️ Tech Stack
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [qrcode.react](https://www.npmjs.com/package/qrcode.react)
+- [jsPDF](https://www.npmjs.com/package/jspdf)
+
+---
+
+## 📁 Project Structure
+
+```
+qreturn-qr-generator/
+├── public/
+│   └── qreturn-bg.jpg         # PDF background template
+├── src/
+│   ├── components/
+│   │   └── QRCodeGenerator.jsx
+│   └── App.jsx
+├── package.json
+├── index.html
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
+
+## ▶️ How to Run Locally
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/qreturn-qr-generator.git
+cd qreturn-qr-generator
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the app
+npm run dev
+```
+
+Open your browser at [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📄 PDF Output Details
+
+- PDF size: A4 (210mm x 297mm)
+- QR code is placed in a predefined white box
+- Image used: `/public/qreturn-bg.jpg`
+
+You can adjust placement by changing the values here:
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+pdf.addImage(qrImage, "PNG", x, y, size, size);
 ```
+
+---
+
+## 📸 Example Usage
+
+1. Enter a URL
+2. Click **Generate QR**
+3. See the preview
+4. Click **Download PNG** or **Generate PDF**
+
+---
+
+## 📬 Contact / Feedback
+
+If you have suggestions or want to contribute, feel free to open an issue or PR.  
+Made with ❤️ for smart returns.
+
+---
+
+## 🪪 License
+
+This project is licensed under the [MIT License](LICENSE).
