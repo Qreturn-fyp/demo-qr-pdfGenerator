@@ -48,7 +48,7 @@ qreturn-qr-generator/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/qreturn-qr-generator.git
+git clone https://github.com/Qreturn-fyp/demo-qr-pdfGenerator.git
 cd qreturn-qr-generator
 
 # 2. Install dependencies
@@ -85,13 +85,3 @@ pdf.addImage(qrImage, "PNG", x, y, size, size);
 
 ---
 
-## 📬 Contact / Feedback
-
-If you have suggestions or want to contribute, feel free to open an issue or PR.  
-Made with ❤️ for smart returns.
-
----
-
-## 🪪 License
-
-This project is licensed under the [MIT License](LICENSE).
